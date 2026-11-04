@@ -1,0 +1,26 @@
+/* تنظیمات کلی سایت */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* تنظیمات اصلی صفحه */
+body {
+    direction: rtl;
+    background-color: #F8F6F2;
+    color: #484354;
+    font-family: Tahoma, sans-serif;
+    line-height: 1.8;
+}
+
+/* رنگ متن عنوان‌ها */
+h1, h2, h3 {
+    color: #484354;
+}
+
+/* ظاهر لینک‌ها */
+a {
+    text-decoration: none;
+    color: #7856A5;
+}
