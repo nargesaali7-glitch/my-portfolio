@@ -1,11 +1,18 @@
-/* تنظیمات کلی سایت */
+
+/* =================================
+   1. تنظیمات اولیه
+================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* تنظیمات اصلی صفحه */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     direction: rtl;
     background-color: #F8F6F2;
@@ -14,13 +21,335 @@ body {
     line-height: 1.8;
 }
 
-/* رنگ متن عنوان‌ها */
-h1, h2, h3 {
-    color: #484354;
+/* رنگ‌ها و تنظیمات مشترک */
+
+:root {
+    --background: #F8F6F2;
+    --white: #FFFFFF;
+    --purple: #7856A5;
+    --light-purple: #E8E1F5;
+    --green: #DCECE7;
+    --pink: #F3DDE2;
+    --blue: #DCE8F5;
+    --text: #484354;
 }
 
-/* ظاهر لینک‌ها */
-a {
+/* =================================
+   2. منوی سایت
+================================= */
+
+.header {
+    background-color: var(--white);
+    padding: 18px 8%;
+    box-shadow: 0 3px 15px rgba(72, 67, 84, 0.05);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--purple);
+    font-size: 22px;
+    font-weight: bold;
     text-decoration: none;
-    color: #7856A5;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--purple);
+}
+
+/* =================================
+   3. بخش معرفی
+================================= */
+
+.hero {
+    min-height: 520px;
+    padding: 80px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.welcome {
+    display: inline-block;
+    background-color: var(--light-purple);
+    color: var(--purple);
+    padding: 7px 18px;
+    border-radius: 30px;
+    font-size: 14px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    line-height: 1.7;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: var(--purple);
+}
+
+.hero-content p {
+    color: #77717F;
+    margin-bottom: 28px;
+    font-size: 16px;
+}
+
+.primary-button {
+    display: inline-block;
+    background-color: var(--purple);
+    color: var(--white);
+    padding: 12px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.primary-button:hover {
+    background-color: #62418D;
+    transform: translateY(-3px);
+}
+
+/* شکل تزئینی بخش معرفی */
+
+.hero-decoration {
+    width: 260px;
+    height: 260px;
+    background-color: var(--green);
+    border-radius: 45% 55% 60% 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    transform: rotate(-5deg);
+}
+
+.decoration-circle {
+    font-size: 65px;
+}
+
+.hero-decoration p {
+    font-size: 14px;
+}
+
+/* =================================
+   4. تنظیمات مشترک بخش‌ها
+================================= */
+
+.section {
+    padding: 75px 10%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading span {
+    color: var(--purple);
+    font-size: 14px;
+}
+
+.section-heading h2 {
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+.about {
+    background-color: var(--white);
+    text-align: center;
+}
+
+.about > p {
+    max-width: 750px;
+    margin: auto;
+    color: #77717F;
+}
+
+/* =================================
+   5. کارت‌های مهارت
+================================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.skill-card {
+    background-color: var(--white);
+    padding: 30px 20px;
+    border-radius: 18px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.skill-card:nth-child(1) {
+    background-color: var(--light-purple);
+}
+
+.skill-card:nth-child(2) {
+    background-color: var(--green);
+}
+
+.skill-card:nth-child(3) {
+    background-color: var(--pink);
+}
+
+.skill-card span {
+    font-size: 38px;
+}
+
+.skill-card h3 {
+    margin: 12px 0 5px;
+}
+
+.skill-card p {
+    font-size: 14px;
+    color: #77717F;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+}
+
+/* =================================
+   6. کارت پروژه
+================================= */
+
+.projects {
+    background-color: var(--white);
+}
+
+.project-card {
+    max-width: 450px;
+    margin: auto;
+    padding: 30px;
+    background-color: var(--background);
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #EEE8F2;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(72, 67, 84, 0.08);
+}
+
+.project-icon {
+    font-size: 45px;
+}
+
+.project-card h3 {
+    margin: 12px 0;
+}
+
+.project-card p {
+    color: #77717F;
+    font-size: 14px;
+}
+
+.project-tag {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    background-color: var(--light-purple);
+    color: var(--purple);
+    font-size: 12px;
+}
+
+/* =================================
+   7. بخش ارتباط
+================================= */
+
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    margin-bottom: 25px;
+    color: #77717F;
+}
+
+/* =================================
+   8. پایین صفحه
+================================= */
+
+.footer {
+    background-color: var(--white);
+    padding: 25px;
+    text-align: center;
+    color: #77717F;
+    font-size: 14px;
+}
+
+/* =================================
+   9. نمایش در موبایل
+================================= */
+
+@media (max-width: 768px) {
+
+    .header {
+        padding: 18px 5%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 7%;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero-decoration {
+        width: 210px;
+        height: 210px;
+    }
+
+    .section {
+        padding: 55px 7%;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
 }
